@@ -1,6 +1,6 @@
 Name:       python-manilaclient
-Version:    1.0.1
-Release:    3%{?dist}
+Version:    1.0.3
+Release:    1%{?dist}
 Summary:    Client Library for OpenStack Share API
 License:    ASL 2.0
 URL:        http://pypi.python.org/pypi/%{name}
@@ -10,6 +10,9 @@ BuildArch:  noarch
 Requires:   python-babel
 Requires:   python-iso8601
 Requires:   python-keystoneclient
+Requires:   python-oslo-config
+Requires:   python-oslo-serialization
+Requires:   python-oslo-utils
 Requires:   python-prettytable
 Requires:   python-requests >= 2.2.0
 Requires:   python-simplejson
@@ -17,9 +20,12 @@ Requires:   python-six
 #Requires:   pyOpenSSL >= 0.12
 
 BuildRequires: python2-devel
+BuildRequires: python-keystoneclient
 BuildRequires: python-oslo-sphinx
+BuildRequires: python-oslo-utils
 BuildRequires: python-setuptools
 BuildRequires: python-pbr
+BuildRequires: python-prettytable
 #BuildRequires: pyOpenSSL
 
 %description
@@ -71,6 +77,9 @@ rm -fr doc/build/html/.doctrees doc/build/html/.buildinfo
 %doc LICENSE doc/build/html
 
 %changelog
+* Fri Mar 27 2015 Haikel Guemar <hguemar@fedoraproject.org> 1.0.3-1
+- Update to upstream 1.0.3
+
 * Tue Dec 09 2014 Pete Zaitcev <zaitcev@redhat.com> - 1.0.1-3
 - Add BuildRequires: python-oslo-sphinx
 
