@@ -1,10 +1,12 @@
+%{!?upstream_version: %global upstream_version %{version}%{?milestone}}
+
 Name:       python-manilaclient
-Version:    1.1.0
-Release:    1%{?dist}
+Version:    XXX
+Release:    XXX
 Summary:    Client Library for OpenStack Share API
 License:    ASL 2.0
 URL:        http://pypi.python.org/pypi/%{name}
-Source0:    http://tarballs.openstack.org/python-manilaclient/%{name}-%{version}.tar.gz
+Source0:    http://tarballs.openstack.org/python-manilaclient/%{name}-%{upstream_version}.tar.gz
 
 BuildArch:  noarch
 Requires:   python-babel
@@ -44,13 +46,10 @@ Documentation for the client library for interacting with Openstack
 Share API.
 
 %prep
-%setup -q
+%setup -q -n %{name}-%{upstream_version}
 
 # Remove bundled egg-info
 rm -rf python_manilaclient.egg-info
-
-# make doc build compatible with python-oslo-sphinx RPM
-sed -i 's/oslosphinx/oslo.sphinx/;s/^html_theme_options/#&/' doc/source/conf.py
 
 %build
 %{__python2} setup.py build
@@ -79,17 +78,4 @@ rm -fr doc/build/html/.doctrees doc/build/html/.buildinfo
 %doc LICENSE doc/build/html
 
 %changelog
-* Tue Apr 28 2015 Pete Zaitcev <zaitcev@redhat.com> - 1.1.0-1
-- Update to upstream Kilo release candidate 1.1.0
 
-* Fri Mar 27 2015 Haikel Guemar <hguemar@fedoraproject.org> 1.0.3-1
-- Update to upstream 1.0.3
-
-* Tue Dec 09 2014 Pete Zaitcev <zaitcev@redhat.com> - 1.0.1-3
-- Add BuildRequires: python-oslo-sphinx
-
-* Wed Nov 26 2014 Pete Zaitcev <zaitcev@redhat.com> - 1.0.1-2
-- Updated with packaging review comments (#1168005)
-
-* Tue Nov 25 2014 Pete Zaitcev <zaitcev@redhat.com> - 1.0.1-1
-- Initial Revision
