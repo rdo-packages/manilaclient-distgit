@@ -1,5 +1,5 @@
 Name:       python-manilaclient
-Version:    1.1.0
+Version:    1.2.0
 Release:    1%{?dist}
 Summary:    Client Library for OpenStack Share API
 License:    ASL 2.0
@@ -79,6 +79,9 @@ rm -fr doc/build/html/.doctrees doc/build/html/.buildinfo
 %doc LICENSE doc/build/html
 
 %changelog
+* Thu Jun 11 2015 Pete Zaitcev <zaitcev@redhat.com> - 1.2.0-1
+- Update to upstream 1.2.0
+
 * Tue Apr 28 2015 Pete Zaitcev <zaitcev@redhat.com> - 1.1.0-1
 - Update to upstream Kilo release candidate 1.1.0
 
