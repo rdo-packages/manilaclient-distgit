@@ -1,10 +1,12 @@
+%{!?upstream_version: %global upstream_version %{version}%{?milestone}}
+
 Name:       python-manilaclient
-Version:    1.2.0
-Release:    2%{?dist}
+Version:    1.4.0
+Release:    1%{?dist}
 Summary:    Client Library for OpenStack Share API
 License:    ASL 2.0
 URL:        http://pypi.python.org/pypi/%{name}
-Source0:    http://tarballs.openstack.org/python-manilaclient/%{name}-%{version}.tar.gz
+Source0:    http://tarballs.openstack.org/python-manilaclient/%{name}-%{upstream_version}.tar.gz
 
 BuildArch:  noarch
 Requires:   python-babel
@@ -44,13 +46,10 @@ Documentation for the client library for interacting with Openstack
 Share API.
 
 %prep
-%setup -q
+%setup -q -n %{name}-%{upstream_version}
 
 # Remove bundled egg-info
 rm -rf python_manilaclient.egg-info
-
-# make doc build compatible with python-oslo-sphinx RPM
-sed -i 's/oslosphinx/oslo.sphinx/;s/^html_theme_options/#&/' doc/source/conf.py
 
 %build
 %{__python2} setup.py build
@@ -79,6 +78,9 @@ rm -fr doc/build/html/.doctrees doc/build/html/.buildinfo
 %doc LICENSE doc/build/html
 
 %changelog
+* Thu Oct 08 2015 Haikel Guemar <hguemar@fedoraproject.org> 1.4.0-1
+- Update to upstream 1.4.0
+
 * Thu Jun 18 2015 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 1.2.0-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_23_Mass_Rebuild
 
