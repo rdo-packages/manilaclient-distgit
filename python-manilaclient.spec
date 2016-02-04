@@ -2,7 +2,7 @@
 
 Name:       python-manilaclient
 Version:    1.4.0
-Release:    1%{?dist}
+Release:    2%{?dist}
 Summary:    Client Library for OpenStack Share API
 License:    ASL 2.0
 URL:        http://pypi.python.org/pypi/%{name}
@@ -78,6 +78,9 @@ rm -fr doc/build/html/.doctrees doc/build/html/.buildinfo
 %doc LICENSE doc/build/html
 
 %changelog
+* Thu Feb 04 2016 Fedora Release Engineering <releng@fedoraproject.org> - 1.4.0-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_24_Mass_Rebuild
+
 * Thu Oct 08 2015 Haikel Guemar <hguemar@fedoraproject.org> 1.4.0-1
 - Update to upstream 1.4.0
 
