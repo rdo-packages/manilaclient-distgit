@@ -1,8 +1,8 @@
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 
 Name:       python-manilaclient
-Version:    XXX
-Release:    XXX
+Version:    1.8.1
+Release:    1%{?dist}
 Summary:    Client Library for OpenStack Share API
 License:    ASL 2.0
 URL:        http://pypi.python.org/pypi/%{name}
@@ -78,4 +78,5 @@ rm -fr doc/build/html/.doctrees doc/build/html/.buildinfo
 %doc LICENSE doc/build/html
 
 %changelog
-
+* Wed Mar 23 2016 RDO <rdo-list@redhat.com> 1.8.1-0.1
+-  Rebuild for Mitaka 1.8.1
