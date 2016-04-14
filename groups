@@ -1,5 +1,5 @@
-# UUID          Group Name
-6ddfecad023c6f4fa3ac8c4d2583c502ea675a73 	Non-Interactive Users
-e09b7ab9ce2d468d11ce03ea3dbca4f9ee29a1fa       	manilaclient-distgit-core
-6655c452fe51e6f63f57a66ee647ae87a30cfca1        	manilaclient-distgit-ptl
-global:Registered-Users		Registered Users
+# UUID                                  	Group Name
+#
+6655c452fe51e6f63f57a66ee647ae87a30cfca1	openstack/manilaclient-distgit-ptl
+e09b7ab9ce2d468d11ce03ea3dbca4f9ee29a1fa	manilaclient-distgit-core
+global:Registered-Users                 	Registered Users
