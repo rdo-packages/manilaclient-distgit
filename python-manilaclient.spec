@@ -1,8 +1,8 @@
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 
 Name:       python-manilaclient
-Version:    1.4.0
-Release:    2%{?dist}
+Version:    1.8.1
+Release:    1%{?dist}
 Summary:    Client Library for OpenStack Share API
 License:    ASL 2.0
 URL:        http://pypi.python.org/pypi/%{name}
@@ -78,29 +78,5 @@ rm -fr doc/build/html/.doctrees doc/build/html/.buildinfo
 %doc LICENSE doc/build/html
 
 %changelog
-* Thu Feb 04 2016 Fedora Release Engineering <releng@fedoraproject.org> - 1.4.0-2
-- Rebuilt for https://fedoraproject.org/wiki/Fedora_24_Mass_Rebuild
-
-* Thu Oct 08 2015 Haikel Guemar <hguemar@fedoraproject.org> 1.4.0-1
-- Update to upstream 1.4.0
-
-* Thu Jun 18 2015 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 1.2.0-2
-- Rebuilt for https://fedoraproject.org/wiki/Fedora_23_Mass_Rebuild
-
-* Thu Jun 11 2015 Pete Zaitcev <zaitcev@redhat.com> - 1.2.0-1
-- Update to upstream 1.2.0
-
-* Tue Apr 28 2015 Pete Zaitcev <zaitcev@redhat.com> - 1.1.0-1
-- Update to upstream Kilo release candidate 1.1.0
-
-* Fri Mar 27 2015 Haikel Guemar <hguemar@fedoraproject.org> 1.0.3-1
-- Update to upstream 1.0.3
-
-* Tue Dec 09 2014 Pete Zaitcev <zaitcev@redhat.com> - 1.0.1-3
-- Add BuildRequires: python-oslo-sphinx
-
-* Wed Nov 26 2014 Pete Zaitcev <zaitcev@redhat.com> - 1.0.1-2
-- Updated with packaging review comments (#1168005)
-
-* Tue Nov 25 2014 Pete Zaitcev <zaitcev@redhat.com> - 1.0.1-1
-- Initial Revision
+* Wed Mar 23 2016 RDO <rdo-list@redhat.com> 1.8.1-0.1
+-  Rebuild for Mitaka 1.8.1
