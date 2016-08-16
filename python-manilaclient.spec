@@ -135,7 +135,7 @@ install -pm 644 tools/manila.bash_completion \
     %{buildroot}%{_sysconfdir}/bash_completion.d/manila
 
 
-%files
+%files -n python2-%{sname}
 %doc LICENSE README.rst
 %{_bindir}/manila
 %{_bindir}/manila-2*
@@ -144,7 +144,7 @@ install -pm 644 tools/manila.bash_completion \
 %{python2_sitelib}/*.egg-info
 
 %if 0%{?with_python3}
-%files
+%files -n python3-%{sname}
 %doc LICENSE README.rst
 %{_bindir}/manila-3*
 %{python3_sitelib}/manilaclient
