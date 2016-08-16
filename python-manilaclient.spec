@@ -8,7 +8,7 @@
 
 Name:       python-manilaclient
 Version:    1.8.1
-Release:    1%{?dist}
+Release:    2%{?dist}
 Summary:    Client Library for OpenStack Share API
 License:    ASL 2.0
 URL:        http://pypi.python.org/pypi/%{name}
@@ -155,5 +155,9 @@ install -pm 644 tools/manila.bash_completion \
 %doc LICENSE doc/build/html
 
 %changelog
+* Tue Aug 16 2016 Haïkel Guémar <hguemar@fedoraproject.org> - 1.8.1-2
+- Add python3 subpackage
+- Add bash completion file
+
 * Wed Mar 23 2016 RDO <rdo-list@redhat.com> 1.8.1-0.1
 -  Rebuild for Mitaka 1.8.1
