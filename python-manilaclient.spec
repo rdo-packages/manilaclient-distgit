@@ -12,7 +12,7 @@ Release:    XXX
 Summary:    Client Library for OpenStack Share API
 License:    ASL 2.0
 URL:        https://pypi.io/pypi/%{name}
-Source0:    http://tarballs.openstack.org/python-manilaclient/%{name}-%{upstream_version}.tar.gz
+Source0:    https://tarballs.openstack.org/python-manilaclient/%{name}-%{upstream_version}.tar.gz
 
 BuildArch:  noarch
 
