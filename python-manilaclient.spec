@@ -28,9 +28,9 @@ Summary:    Client Library for OpenStack Share API
 # merely because Sphinx pulls them in when scanning for docstrings.
 BuildRequires: python2-devel
 BuildRequires: python-keystoneclient
-BuildRequires: python-oslo-sphinx
 BuildRequires: python-oslo-utils
 BuildRequires: python-pbr
+BuildRequires: git
 BuildRequires: python-prettytable
 BuildRequires: python-setuptools
 BuildRequires: python-six
@@ -62,7 +62,6 @@ Summary:    Client Library for OpenStack Share API
 # merely because Sphinx pulls them in when scanning for docstrings.
 BuildRequires: python3-devel
 BuildRequires: python3-keystoneclient
-BuildRequires: python3-oslo-sphinx
 BuildRequires: python3-oslo-utils
 BuildRequires: python3-pbr
 BuildRequires: python3-prettytable
@@ -93,13 +92,14 @@ Share API.
 Summary:    Documentation for OpenStack Share API Client
 
 BuildRequires: python-sphinx
+BuildRequires: python-openstackdocstheme
 
 %description doc
 Documentation for the client library for interacting with Openstack
 Share API.
 
 %prep
-%setup -q -n %{name}-%{upstream_version}
+%autosetup -n %{name}-%{upstream_version} -S git
 
 # Remove bundled egg-info
 rm -rf python_manilaclient.egg-info
@@ -110,10 +110,7 @@ rm -rf python_manilaclient.egg-info
 %py3_build
 %endif
 
-export PYTHONPATH="$( pwd ):$PYTHONPATH"
-pushd doc
-make html
-popd
+%{__python2} setup.py build_sphinx -b html
 
 # Fix hidden-file-or-dir warnings
 rm -fr doc/build/html/.doctrees doc/build/html/.buildinfo
