@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_76abc189",
+        "filename": "python-manilaclient.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2017-08-08T08:15:46Z",
+      "side": 1,
+      "message": "ipaddress is required for python \u003c 3.3. This line must be kept:\n\nipaddress\u003e\u003d1.0.7;python_version\u003c\u00273.3\u0027  # PSF",
+      "range": {
+        "startLine": 49,
+        "startChar": 0,
+        "endLine": 49,
+        "endChar": 28
+      },
+      "revId": "71baa67b0b1625f1afb06a67371131221de0e306",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
