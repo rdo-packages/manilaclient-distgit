@@ -46,6 +46,30 @@
       "revId": "71baa67b0b1625f1afb06a67371131221de0e306",
       "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_367939fd",
+        "filename": "python-manilaclient.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 403
+      },
+      "writtenOn": "2017-08-08T09:07:28Z",
+      "side": 1,
+      "message": "Ok",
+      "parentUuid": "5a890539_96110daf",
+      "range": {
+        "startLine": 49,
+        "startChar": 0,
+        "endLine": 49,
+        "endChar": 28
+      },
+      "revId": "71baa67b0b1625f1afb06a67371131221de0e306",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
     }
   ]
 }
