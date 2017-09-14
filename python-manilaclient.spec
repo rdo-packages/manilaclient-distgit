@@ -7,7 +7,7 @@
 %endif
 
 Name:       python-manilaclient
-Version:    1.17.1
+Version:    1.17.2
 Release:    1%{?dist}
 Summary:    Client Library for OpenStack Share API
 License:    ASL 2.0
@@ -160,6 +160,9 @@ install -pm 644 tools/manila.bash_completion \
 %license LICENSE
 
 %changelog
+* Thu Sep 14 2017 Haikel Guemar <hguemar@fedoraproject.org> 1.17.2-1
+- Update to 1.17.2
+
 * Mon Aug 14 2017 Alfredo Moralejo <amoralej@redhat.com> 1.17.1-1
 - Update to 1.17.1
 
