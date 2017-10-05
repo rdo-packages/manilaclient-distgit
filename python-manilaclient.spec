@@ -6,6 +6,10 @@
 %global with_python3 1
 %endif
 
+%global common_desc \
+Client library and command line utility for interacting with Openstack \
+Share API.
+
 Name:       python-manilaclient
 Version:    XXX
 Release:    XXX
@@ -17,8 +21,7 @@ Source0:    https://tarballs.openstack.org/python-manilaclient/%{name}-%{upstrea
 BuildArch:  noarch
 
 %description
-Client library and command line utility for interacting with Openstack
-Share API.
+%{common_desc}
 
 %package -n python2-%{sname}
 Summary:    Client Library for OpenStack Share API
@@ -51,8 +54,7 @@ Requires:   python-ipaddress
 Requires:   python-six
 
 %description -n python2-%{sname}
-Client library and command line utility for interacting with Openstack
-Share API.
+%{common_desc}
 
 %if 0%{?with_python3}
 %package -n python3-%{sname}
@@ -84,8 +86,7 @@ Requires:   python3-simplejson
 Requires:   python3-six
 
 %description -n python3-%{sname}
-Client library and command line utility for interacting with Openstack
-Share API.
+%{common_desc}
 %endif
 
 
@@ -96,8 +97,9 @@ BuildRequires: python-sphinx
 BuildRequires: python-openstackdocstheme
 
 %description doc
-Documentation for the client library for interacting with Openstack
-Share API.
+%{common_desc}
+
+This package contains documentation.
 
 %prep
 %autosetup -n %{name}-%{upstream_version} -S git
