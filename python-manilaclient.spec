@@ -30,28 +30,33 @@ Summary:    Client Library for OpenStack Share API
 # We require a whole set of packages that are not needed by setup.py,
 # merely because Sphinx pulls them in when scanning for docstrings.
 BuildRequires: python2-devel
-BuildRequires: python-keystoneclient
-BuildRequires: python-oslo-utils
-BuildRequires: python-pbr
+BuildRequires: python2-keystoneclient
+BuildRequires: python2-oslo-utils
+BuildRequires: python2-pbr
 BuildRequires: git
-BuildRequires: python-prettytable
-BuildRequires: python-setuptools
-BuildRequires: python-six
+BuildRequires: python2-prettytable
+BuildRequires: python2-setuptools
+BuildRequires: python2-six
 
-Requires:   python-babel
-Requires:   python-iso8601
-Requires:   python-keystoneclient >= 1:3.8.0
-Requires:   python-oslo-config >= 2:4.0.0
-Requires:   python-oslo-i18n >= 2.1.0
-Requires:   python-oslo-log >= 3.22.0
-Requires:   python-oslo-serialization >= 1.10.0
-Requires:   python-oslo-utils >= 3.20.0
-Requires:   python-pbr
-Requires:   python-prettytable
-Requires:   python-requests >= 2.10.0
+Requires:   python2-babel
+Requires:   python2-keystoneclient >= 1:3.8.0
+Requires:   python2-oslo-config >= 2:5.1.0
+Requires:   python2-oslo-i18n >= 3.15.3
+Requires:   python2-oslo-log >= 3.36.0
+Requires:   python2-oslo-serialization >= 2.18.0
+Requires:   python2-oslo-utils >= 3.33.0
+Requires:   python2-pbr
+Requires:   python2-prettytable
+Requires:   python2-requests >= 2.14.2
+Requires:   python2-six
+Requires:   python2-debtcollector
+%if 0%{?fedora} > 0
+Requires:   python2-simplejson
+Requires:   python2-ipaddress
+%else
 Requires:   python-simplejson
 Requires:   python-ipaddress
-Requires:   python-six
+%endif
 
 %description -n python2-%{sname}
 %{common_desc}
@@ -72,18 +77,18 @@ BuildRequires: python3-setuptools
 BuildRequires: python3-six
 
 Requires:   python3-babel
-Requires:   python3-iso8601
 Requires:   python3-keystoneclient >= 1:3.8.0
-Requires:   python3-oslo-config >= 2:4.0.0
-Requires:   python3-oslo-i18n >= 2.1.0
-Requires:   python3-oslo-log >= 3.22.0
-Requires:   python3-oslo-serialization >= 1.10.0
-Requires:   python3-oslo-utils >= 3.20.0
+Requires:   python3-oslo-config >= 2:5.1.0
+Requires:   python3-oslo-i18n >= 3.15.3
+Requires:   python3-oslo-log >= 3.36.0
+Requires:   python3-oslo-serialization >= 2.18.0
+Requires:   python3-oslo-utils >= 3.33.0
 Requires:   python3-pbr
 Requires:   python3-prettytable
-Requires:   python3-requests >= 2.10.0
+Requires:   python3-requests >= 2.14.2
 Requires:   python3-simplejson
 Requires:   python3-six
+Requires:   python3-debtcollector
 
 %description -n python3-%{sname}
 %{common_desc}
@@ -93,8 +98,8 @@ Requires:   python3-six
 %package doc
 Summary:    Documentation for OpenStack Share API Client
 
-BuildRequires: python-sphinx
-BuildRequires: python-openstackdocstheme
+BuildRequires: python2-sphinx
+BuildRequires: python2-openstackdocstheme
 
 %description doc
 %{common_desc}
