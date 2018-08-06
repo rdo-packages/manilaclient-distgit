@@ -40,7 +40,7 @@ BuildRequires: python2-six
 
 Requires:   python2-babel
 Requires:   python2-keystoneclient >= 1:3.8.0
-Requires:   python2-oslo-config >= 2:5.1.0
+Requires:   python2-oslo-config >= 2:5.2.0
 Requires:   python2-oslo-i18n >= 3.15.3
 Requires:   python2-oslo-log >= 3.36.0
 Requires:   python2-oslo-serialization >= 2.18.0
@@ -78,7 +78,7 @@ BuildRequires: python3-six
 
 Requires:   python3-babel
 Requires:   python3-keystoneclient >= 1:3.8.0
-Requires:   python3-oslo-config >= 2:5.1.0
+Requires:   python3-oslo-config >= 2:5.2.0
 Requires:   python3-oslo-i18n >= 3.15.3
 Requires:   python3-oslo-log >= 3.36.0
 Requires:   python3-oslo-serialization >= 2.18.0
