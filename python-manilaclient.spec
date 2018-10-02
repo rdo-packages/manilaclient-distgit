@@ -168,3 +168,4 @@ install -pm 644 tools/manila.bash_completion \
 
 %changelog
 
+# REMOVEME: error caused by commit http://git.openstack.org/cgit/openstack/python-manilaclient/commit/?id=81a8bf7881105a067cbfdac95d45387480fb1d08
