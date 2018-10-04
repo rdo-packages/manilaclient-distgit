@@ -99,6 +99,7 @@ Requires:   python3-debtcollector
 Summary:    Documentation for OpenStack Share API Client
 
 BuildRequires: python2-sphinx
+BuildRequires: python2-sphinxcontrib-programoutput
 BuildRequires: python2-openstackdocstheme
 
 %description doc
@@ -167,4 +168,3 @@ install -pm 644 tools/manila.bash_completion \
 %license LICENSE
 
 %changelog
-
