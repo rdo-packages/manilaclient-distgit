@@ -1,6 +1,7 @@
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 
 %global sname manilaclient
+%global with_doc 1
 
 %if 0%{?fedora}
 %global with_python3 1
@@ -94,7 +95,7 @@ Requires:   python3-debtcollector
 %{common_desc}
 %endif
 
-
+%if 0%{?with_doc}
 %package doc
 Summary:    Documentation for OpenStack Share API Client
 
@@ -106,6 +107,7 @@ BuildRequires: python2-openstackdocstheme
 %{common_desc}
 
 This package contains documentation.
+%endif
 
 %prep
 %autosetup -n %{name}-%{upstream_version} -S git
@@ -119,10 +121,11 @@ rm -rf python_manilaclient.egg-info
 %py3_build
 %endif
 
+%if 0%{?with_doc}
 sphinx-build -b html doc/source doc/build/html
-
 # Fix hidden-file-or-dir warnings
 rm -fr doc/build/html/.doctrees doc/build/html/.buildinfo
+%endif
 
 %install
 %if 0%{?with_python3}
@@ -163,8 +166,10 @@ install -pm 644 tools/manila.bash_completion \
 %{python3_sitelib}/*.egg-info
 %endif
 
+%if 0%{?with_doc}
 %files doc
 %doc doc/build/html
 %license LICENSE
+%endif
 
 %changelog
