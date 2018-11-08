@@ -38,6 +38,9 @@ BuildArch:  noarch
 %package -n python%{pyver}-%{sname}
 Summary:    Client Library for OpenStack Share API
 %{?python_provide:%python_provide python%{pyver}-%{sname}}
+%if %{pyver} == 3
+Obsoletes: python2-%{sname} < %{version}-%{release}
+%endif
 
 # We require a whole set of packages that are not needed by setup.py,
 # merely because Sphinx pulls them in when scanning for docstrings.
