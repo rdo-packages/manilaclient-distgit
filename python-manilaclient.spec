@@ -11,7 +11,7 @@ Client library and command line utility for interacting with Openstack \
 Share API.
 
 Name:       python-manilaclient
-Version:    1.24.1
+Version:    1.24.2
 Release:    1%{?dist}
 Summary:    Client Library for OpenStack Share API
 License:    ASL 2.0
@@ -167,6 +167,9 @@ install -pm 644 tools/manila.bash_completion \
 %license LICENSE
 
 %changelog
+* Tue Apr 23 2019 RDO <dev@lists.rdoproject.org> 1.24.2-1
+- Update to 1.24.2
+
 * Thu Aug 09 2018 RDO <dev@lists.rdoproject.org> 1.24.1-1
 - Update to 1.24.1
 
