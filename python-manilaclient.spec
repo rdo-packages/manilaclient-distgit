@@ -1,22 +1,7 @@
-# Macros for py2/py3 compatibility
-%if 0%{?fedora} || 0%{?rhel} > 7
-%global pyver %{python3_pkgversion}
-%else
-%global pyver 2
-%endif
-%global pyver_bin python%{pyver}
-%global pyver_sitelib %python%{pyver}_sitelib
-%global pyver_install %py%{pyver}_install
-%global pyver_build %py%{pyver}_build
-# End of macros for py2/py3 compatibility
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 
 %global sname manilaclient
 %global with_doc 1
-
-%if 0%{?fedora}
-%global with_python3 1
-%endif
 
 %global common_desc \
 Client library and command line utility for interacting with Openstack \
@@ -35,56 +20,49 @@ BuildArch:  noarch
 %description
 %{common_desc}
 
-%package -n python%{pyver}-%{sname}
+%package -n python3-%{sname}
 Summary:    Client Library for OpenStack Share API
-%{?python_provide:%python_provide python%{pyver}-%{sname}}
-%if %{pyver} == 3
+%{?python_provide:%python_provide python3-%{sname}}
 Obsoletes: python2-%{sname} < %{version}-%{release}
-%endif
 
 # We require a whole set of packages that are not needed by setup.py,
 # merely because Sphinx pulls them in when scanning for docstrings.
-BuildRequires: python%{pyver}-devel
-BuildRequires: python%{pyver}-keystoneclient
-BuildRequires: python%{pyver}-oslo-utils
-BuildRequires: python%{pyver}-pbr
+BuildRequires: python3-devel
+BuildRequires: python3-keystoneclient
+BuildRequires: python3-oslo-utils
+BuildRequires: python3-pbr
 BuildRequires: git
-BuildRequires: python%{pyver}-prettytable
-BuildRequires: python%{pyver}-setuptools
-BuildRequires: python%{pyver}-six
+BuildRequires: python3-prettytable
+BuildRequires: python3-setuptools
+BuildRequires: python3-six
 
-Requires:   python%{pyver}-babel
-Requires:   python%{pyver}-keystoneclient >= 1:3.8.0
-Requires:   python%{pyver}-oslo-config >= 2:5.2.0
-Requires:   python%{pyver}-oslo-i18n >= 3.15.3
-Requires:   python%{pyver}-oslo-log >= 3.36.0
-Requires:   python%{pyver}-oslo-serialization >= 2.18.0
-Requires:   python%{pyver}-oslo-utils >= 3.33.0
-Requires:   python%{pyver}-pbr
-Requires:   python%{pyver}-prettytable
-Requires:   python%{pyver}-requests >= 2.14.2
-Requires:   python%{pyver}-six
-Requires:   python%{pyver}-debtcollector
+Requires:   python3-babel
+Requires:   python3-keystoneclient >= 1:3.8.0
+Requires:   python3-oslo-config >= 2:5.2.0
+Requires:   python3-oslo-i18n >= 3.15.3
+Requires:   python3-oslo-log >= 3.36.0
+Requires:   python3-oslo-serialization >= 2.18.0
+Requires:   python3-oslo-utils >= 3.33.0
+Requires:   python3-pbr
+Requires:   python3-prettytable
+Requires:   python3-requests >= 2.14.2
+Requires:   python3-six
+Requires:   python3-debtcollector
+Requires:   python3-osc-lib >= 1.10.0
 
-# Handle python2 exception
-%if %{pyver} == 2
-Requires:   python-simplejson
-Requires:   python-ipaddress
-%else
-Requires:   python%{pyver}-simplejson
-%endif
+Requires:   python3-simplejson
 
 
-%description -n python%{pyver}-%{sname}
+%description -n python3-%{sname}
 %{common_desc}
 
 %if 0%{?with_doc}
 %package doc
 Summary:    Documentation for OpenStack Share API Client
 
-BuildRequires: python%{pyver}-sphinx
-BuildRequires: python%{pyver}-sphinxcontrib-programoutput
-BuildRequires: python%{pyver}-openstackdocstheme
+BuildRequires: python3-sphinx
+BuildRequires: python3-sphinxcontrib-programoutput
+BuildRequires: python3-openstackdocstheme
 
 %description doc
 %{common_desc}
@@ -99,19 +77,19 @@ This package contains documentation.
 rm -rf python_manilaclient.egg-info
 
 %build
-%{pyver_build}
+%{py3_build}
 
 %if 0%{?with_doc}
-sphinx-build-%{pyver} -b html doc/source doc/build/html
+sphinx-build-3 -b html doc/source doc/build/html
 # Fix hidden-file-or-dir warnings
 rm -fr doc/build/html/.doctrees doc/build/html/.buildinfo
 %endif
 
 %install
-%{pyver_install}
+%{py3_install}
 
 # Create a versioned binary for backwards compatibility until everything is pure py3
-ln -s manila %{buildroot}%{_bindir}/manila-%{pyver}
+ln -s manila %{buildroot}%{_bindir}/manila-3
 
 # Install bash completion
 mkdir -p %{buildroot}%{_sysconfdir}/bash_completion.d
@@ -119,14 +97,14 @@ install -pm 644 tools/manila.bash_completion \
     %{buildroot}%{_sysconfdir}/bash_completion.d/manila
 
 
-%files -n python%{pyver}-%{sname}
+%files -n python3-%{sname}
 %doc README.rst
 %license LICENSE
 %{_bindir}/manila
-%{_bindir}/manila-%{pyver}
+%{_bindir}/manila-3
 %{_sysconfdir}/bash_completion.d
-%{pyver_sitelib}/manilaclient
-%{pyver_sitelib}/*.egg-info
+%{python3_sitelib}/manilaclient
+%{python3_sitelib}/*.egg-info
 
 %if 0%{?with_doc}
 %files doc
