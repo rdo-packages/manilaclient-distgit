@@ -62,6 +62,7 @@ Summary:    Documentation for OpenStack Share API Client
 
 BuildRequires: python3-sphinx
 BuildRequires: python3-sphinxcontrib-programoutput
+BuildRequires: python3-openstackclient
 BuildRequires: python3-openstackdocstheme
 
 %description doc
