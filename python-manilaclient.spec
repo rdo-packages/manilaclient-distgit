@@ -59,7 +59,6 @@ Requires:   python3-oslo-utils >= 3.33.0
 Requires:   python3-pbr
 Requires:   python3-prettytable
 Requires:   python3-requests >= 2.14.2
-Requires:   python3-six
 Requires:   python3-debtcollector
 Requires:   python3-osc-lib >= 1.10.0
 
