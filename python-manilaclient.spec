@@ -47,7 +47,6 @@ BuildRequires: python3-pbr
 BuildRequires: git-core
 BuildRequires: python3-prettytable
 BuildRequires: python3-setuptools
-BuildRequires: python3-six
 
 Requires:   python3-babel
 Requires:   python3-keystoneclient >= 1:3.8.0
@@ -59,7 +58,6 @@ Requires:   python3-oslo-utils >= 3.33.0
 Requires:   python3-pbr
 Requires:   python3-prettytable
 Requires:   python3-requests >= 2.14.2
-Requires:   python3-six
 Requires:   python3-debtcollector
 Requires:   python3-osc-lib >= 1.10.0
 
