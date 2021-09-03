@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c14bd2e7_47dca297",
+        "filename": "python-manilaclient.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 403
+      },
+      "writtenOn": "2021-09-03T06:45:48Z",
+      "side": 1,
+      "message": "can also clean this",
+      "range": {
+        "startLine": 50,
+        "startChar": 0,
+        "endLine": 50,
+        "endChar": 26
+      },
+      "revId": "b6d5d071ff7d88723a5a0221ef3fe285a0399f01",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": true
+    }
+  ]
+}
