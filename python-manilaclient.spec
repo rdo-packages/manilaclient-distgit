@@ -1,5 +1,5 @@
 %{!?sources_gpg: %{!?dlrn:%global sources_gpg 1} }
-%global sources_gpg_sign 0x815AFEC729392386480E076DCC0DFE2D21C023C9
+%global sources_gpg_sign 0x2ef3fe0ec2b075ab7458b5f8b702b20b13df2318
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 # we are excluding some BRs from automatic generator
 %global excluded_brs doc8 bandit pre-commit hacking flake8-import-order
@@ -16,7 +16,7 @@ Client library and command line utility for interacting with Openstack \
 Share API.
 
 Name:       python-manilaclient
-Version:    4.6.0
+Version:    4.6.1
 Release:    1%{?dist}
 Summary:    Client Library for OpenStack Share API
 License:    Apache-2.0
@@ -126,6 +126,9 @@ install -pm 644 tools/manila.bash_completion \
 %endif
 
 %changelog
+* Fri Feb 02 2024 RDO <dev@lists.rdoproject.org> 4.6.1-1
+- Update to 4.6.1
+
 * Mon Sep 04 2023 RDO <dev@lists.rdoproject.org> 4.6.0-1
 - Update to 4.6.0
 
